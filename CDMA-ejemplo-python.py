@@ -33,6 +33,7 @@ for i in range(0,n): #de 0 hasta n - 1
 
 #print(signal)
 
+#copia la mariz PN n_datos veces
 PN_long = np.matlib.repmat( PN , n_datos , 1 )
 #print(PN_long)
 
@@ -42,10 +43,23 @@ data_plot = np.repeat(datos,100,1)
 signal_plot = np.repeat(signal,100,1)
 
 L = PN_plot.size
-#print(L)
 
 for i in range(0,n):
-    plt.plot(data_plot[:,i])
     fig = plt.figure() #genera la figura
-    ax = fig.add_subplot(3,1,1) #agrega el subplot
-    #plt.show()
+    
+    #x1 = np.linspace(0, data_plot[:,i].size , 3 ) #define al eje X (inicio, fin, muestras )
+    ax1 = fig.add_subplot(3,1,1) #agrega el subplot, ax por axys (eje)
+    ax1.set_title("Datos")
+    ax1.plot(data_plot[:,i])
+    
+    #x2 = np.linspace(0, PN_plot[:,i].size , 3 )
+    ax2 = fig.add_subplot(3,1,2) #agrega otro subplot
+    ax2.set_title("Secuencia pseudo aleatoria")
+    ax2.plot(PN_plot[:,i])
+    
+    #x3 = np.linspace(0, signal_plot[:,i].size , 3 )
+    ax3 = fig.add_subplot(3,1,3) #agrega otro subplot
+    ax3.set_title("Señal codificada")
+    ax3.plot(signal_plot[:,i])
+    
+    fig.show()
