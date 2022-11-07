@@ -5,6 +5,5 @@ Hace uso de [numPy](https://numpy.org/doc/) y [matPlotLib](https://matplotlib.or
 
 # Estado
 
-Incompleto.  
-
-Siéntase libre de colaborar.
+Funciona. Pero no hace las graficas.
+Todos los parametros dependen de n, n_datos, n_PN
