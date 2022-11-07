@@ -83,9 +83,6 @@ for i in range(n):
 
 senial_transmisora = signal.sum(axis=0) #sum(signal, 2)
 senial_transmisora_plot = signal_plot.sum(axis=0) #sum(signal, 2)
-#print(signal)
-#print(type(signal))
-#print(senial_transmisora)
 
 fig = plt.figure()
 fig.set_size_inches(18.5, 10.5, forward=True)
@@ -104,8 +101,8 @@ f_data = np.arange( - pi , pi - ( 2 * pi / datos.size ) , 2 * pi / datos.size ) 
 f_signal = np.arange( - pi , pi - ( 2 * pi / signal.size ) , 2 * pi / signal.size )	# f_signal = -pi:2*pi/length(signal):pi-2*pi/length(signal);
 
 freqs = np.fft.fftfreq(64, 0.1)
-# Grafica del espectro
 
+# Grafica del espectro
 
 for i in range(n):
   fig = plt.figure()
@@ -116,16 +113,14 @@ for i in range(n):
   ax1.set_title("FFT de los datos del usuario "+str(i+1))
   ax1.stem(freqs, np.abs( np.fft.fft( bindata[i, :], 64) ) / datos.size )
 
-
   #plt.xlim( 0 , 2 * pi )
   ax2.set_title("FFT de la senial del usuario "+ str(i+1))
   ax2.stem( freqs, np.abs( np.fft.fft( signal[i, :], 64 ) ) / signal.size )
 
 # Decodificacion
 
-decoded_signal = np.zeros(( n , n_datos )) # Que esta pasando aca, en que parte de la teoria hay matrices 3D !?
+decoded_signal = np.zeros(( n , n_datos ))
 recovered_signal = np.zeros(( n , n_datos )) # n, PN
-#decoded_signal_plot = np.zeros( n_datos * 500 )
 
 for user in range(n):
 
