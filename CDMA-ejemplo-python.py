@@ -164,3 +164,12 @@ for user in range(n):
   fig.show()
 
 # Fin
+
+c=0
+for i in range(n):
+  for j in range(n_datos):
+    if(recovered_signal[i, j]!= datos[i, j]):
+      c=c+1
+
+print("Cantidad de errores:",c)
+print("Cantidad de bits transmitidos:",n_datos*n)
