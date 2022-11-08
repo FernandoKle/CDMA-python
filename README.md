@@ -5,5 +5,7 @@ Hace uso de [numPy](https://numpy.org/doc/) y [matPlotLib](https://matplotlib.or
 
 # Estado
 
-Funciona. Pero no hace las graficas.
-Todos los parametros dependen de n, n_datos, n_PN
+Funciona. Todos los parametros dependen de las variables: 
+* **n**         -> Numero de usuarios
+* **n_datos**   -> Numero de datos
+* **n_PN**      -> Longitud del codigo pseudo aleatorio
